@@ -2,17 +2,17 @@ var app = angular.module('store',['store-directives']);
 
 app.controller('StoreController', ['$scope', '$http', function($scope , $http){
 
-    this.products = gems;
-    $scope.addIt = function (gems) {
-        console.info("added "+gems)
-    };
+    //this.products = gems;
+    //$scope.addIt = function (gems) {
+    //    console.info("added "+gems)
+    //};
 
-    //var store = this;
-    //store.products = [];
-    //
-    //$http.get('/store-products.json').success(function(data){
-    //    store.products = data;
-    //});
+    var store = this;
+    store.products = [];
+
+    $http.get('/store-products.json').success(function(data){
+        store.products = data;
+    });
 }]);
 
 app.controller('ReviewController', function () {
