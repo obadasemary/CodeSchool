@@ -10,7 +10,7 @@ app.controller('StoreController', ['$scope', '$http', function($scope , $http){
     var store = this;
     store.products = [];
 
-    $http.get("/js/store-products.json").success(function(data){
+    $http.get("store-products.json").success(function(data){
         store.products = data;
         console.log(data);
     });
